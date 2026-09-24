@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+uv.lock
+
+# Virtual environment
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Jupyter Book v2 build output
+_build/
+
+# Environment variables
+.env
+secrets
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Other
+misc/
+
+# Training outputs (created when running the notebooks)
+outputs/
+notebooks/my-plan.md
+notebooks/field_samples_exploration.ipynb
+notebooks/dmp_draft.md
+
+# Participant download (built by scripts/build_download.py, also in CI)
+preparation/training_download.zip
+training_download/

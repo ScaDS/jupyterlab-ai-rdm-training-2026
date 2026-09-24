@@ -1,0 +1,28 @@
+# Guide (user-friendly):
+# https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+
+[project]
+name = "jupyterlab-ai-data-stewards"
+version = "1.0.0"
+description = "Participant environment for the one-day training: JupyterLab, AI assistant, and Python for data stewards"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "bia-bob",
+  "fg-data-profiling>=4.19.1",
+  "frictionless>=5.19.0",
+  "ipykernel",
+  "ipywidgets",
+  "jupyterlab",
+  "matplotlib",
+  "notebook",
+  "numpy",
+  "pandas",
+  "pandera>=0.31.1",
+  "python-dotenv",
+  "requests",
+  "seaborn",
+  # Pinned setuptools needed for fg-data-profiling
+  "setuptools<=81.0.0",
+]
+[tool.uv]
+package = false
