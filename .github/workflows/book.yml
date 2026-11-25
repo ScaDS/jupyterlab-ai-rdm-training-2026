@@ -37,18 +37,14 @@ jobs:
 
     - name: Build the book
       env:
-        # site is served from https://<owner>.github.io/<repository-name>/
         BASE_URL: /${{ github.event.repository.name }}
       run: jupyter book build --html
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v5
       with:
-        name: github-pages-${{ github.run_attempt }}
         path: "_build/html"
 
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v5
-      with:
-        artifact_name: github-pages-${{ github.run_attempt }}
