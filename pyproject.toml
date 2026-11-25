@@ -2,14 +2,14 @@
 # https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
 
 [project]
-name = "jupyterlab-ai-data-stewards-dev"
+name = "jupyter-ai-rdm-training"
 version = "1.0.0"
 description = "Development environment: participant packages plus Jupyter Book for building the site"
 requires-python = ">=3.11,<3.14"
 dependencies = [
   "bia-bob",
-  "fg-data-profiling>=4.19.1",
-  "frictionless>=5.19.0",
+  "fg-data-profiling",
+  "frictionless",
   "ipykernel",
   "ipywidgets",
   "jupyter-book>=2",
@@ -18,12 +18,12 @@ dependencies = [
   "notebook",
   "numpy",
   "pandas",
-  "pandera>=0.31.1",
+  "pandera",
   "python-dotenv",
   "requests",
   "seaborn",
-  # Pinned setuptools needed for fg-data-profiling
-  "setuptools<=81.0.0",
+  "stackview",
 ]
 [tool.uv]
 package = false
+constraint-dependencies = ["fonttools<4.69"]

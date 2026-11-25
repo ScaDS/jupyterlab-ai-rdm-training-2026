@@ -1,16 +1,16 @@
-# JupyterLab, AI Assistant, and Python for Data Stewards
+# JupyterLab, AI Assistant, and Python for Research Data Management
 
-A one-day hands-on training by [ScaDS.AI](https://scads.ai/). Participants learn to use JupyterLab with an integrated AI assistant as a workbench for data stewardship. They then use it to turn a messy raw dataset into a validated, documented, deposit-ready data package.
+A one-day hands-on training by [Come2Data](https://come2data.de/) and [ScaDS.AI](https://scads.ai/). Participants learn to use JupyterLab with an integrated AI assistant as a workbench for research data management tasks. They use it to turn a messy raw dataset into a validated, documented, deposit-ready data package.
 
-Slides: [training.pdf](slides/training.pdf)
+Slides: [jupyter-ai-rdm.pdf](slides/jupyter-ai-rdm.pdf)
 
 ## Learning objectives
 
 By the end of the day you will be able to:
 
 1. Manage a reproducible Python project and environment with `uv`.
-2. Work confidently in JupyterLab and Jupyter notebooks.
-3. Use the `bia-bob` AI assistant to generate, explain, and fix code, and adapt it to the data steward domain with a system prompt.
+2. Work in JupyterLab and Jupyter notebooks.
+3. Use the `bia-bob` AI assistant to generate, explain, and fix code, and adapt it to the Research Data Management domain with a system prompt.
 4. Explore a raw dataset and draft a plan and documentation with the assistant, then read and verify what it produced.
 5. Define and enforce a data schema (a "data contract") with `pandera`.
 6. Generate a data quality report with `fg-data-profiling` and apply light, documented cleaning.
@@ -21,7 +21,7 @@ The rule for the whole day is **AI-first, but always understand and verify**: th
 
 ## Before the training
 
-Follow the [preparation](preparation/readme.md) instructions and run the setup check notebook. **Please complete this before the training day.** The setup slot on the day is only meant for fixing small problems, not for installing everything from scratch.
+Follow the [preparation](preparation/readme.md) instructions and run the setup check notebook. **Make sure to complete this a few days before the training session.** The setup slot on the day is only meant for fixing small problems, not for installing everything from scratch.
 
 ## Agenda
 
@@ -51,8 +51,9 @@ Every notebook from 5 onwards starts with a **catch-up** cell. It copies the ref
 
 ## After the training
 
-Everything you need to repeat the exercises at home is in the [download](preparation/readme.md). You can use any OpenAI-compatible LLM endpoint you have access to.
+Everything you need to repeat the exercises at home is in the [download](). You can use any OpenAI-compatible LLM endpoint you have access to.
 
 ## License
 
-Content: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Code: [MIT](https://opensource.org/licenses/MIT).
+Content: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).  
+Code: [MIT](https://opensource.org/licenses/MIT).

@@ -10,7 +10,7 @@ Internal notes for running the one-day format (10:00–16:00). These notes are n
 - [ ] Run all notebooks once against the endpoint (`0` to `7`, including the generated notebook in `3`) and time the slowest prompts, especially the notebook generation with `LLM_MODEL_CODER`.
 - [ ] Send a reminder about the preparation a few days before, asking participants to run `0_setup-check`.
 - [ ] Update the slides: date, venue/event template, training-materials link and QR code, and screenshots of the LLM service you use.
-- [ ] Rebuild the participant download: `python scripts/build_download.py` (CI does this automatically on push).
+- [ ] Rebuild the participant download
 
 ## Timing per block
 

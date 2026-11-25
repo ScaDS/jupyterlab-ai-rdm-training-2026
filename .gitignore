@@ -36,6 +36,8 @@ notebooks/my-plan.md
 notebooks/field_samples_exploration.ipynb
 notebooks/dmp_draft.md
 
-# Participant download (built by scripts/build_download.py, also in CI)
-preparation/training_download.zip
+# Participant download
+training_download.zip
 training_download/
+jupyter-ai-rdm-training/
+jupyter-ai-rdm-training.zip

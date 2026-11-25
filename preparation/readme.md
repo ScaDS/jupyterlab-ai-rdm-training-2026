@@ -1,22 +1,45 @@
 # Preparation
 
-> **Please complete these steps before the training day.** If you run into problems, contact the trainer via [email](mailto:matthias.taeschner@uni-leipzig.de?subject=JupyterLab%20AI%20Training%20Preparation) and bring the output of the setup check notebook.
+> **Make sure to complete these steps several days before the training session.  
+> If you run into problems, contact the trainer via [email](mailto:matthias.taeschner@uni-leipzig.de?subject=JupyterLab%20AI%20Training%20Preparation).**
 
 ## 1. Access to an LLM endpoint
 
-The AI assistant connects to a Large Language Model (LLM) through an **OpenAI-compatible API**. For the training you need:
+The AI assistant we want to use connects to a Large Language Model (LLM) through an **OpenAI-compatible API**. For the training you need to set the following variables in the file `secrets` (also see below):
 
-* the **endpoint URL** of the API (`ENDPOINT_URL`)
+* the **endpoint URL** of such an API (`ENDPOINT_URL`)
 * a personal **API key** (`OPENAI_API_KEY`)
-* the names of two models offered by the endpoint: a general-purpose model (`LLM_MODEL`) and a model specialised in code (`LLM_MODEL_CODER`)
+* the names of two models offered by the endpoint:
+  * a general-purpose model (`LLM_MODEL`) 
+  * a model specialised in coding (`LLM_MODEL_CODER`)
 
-:::{important} TODO for the trainer: provider-specific steps
-Describe here how participants get an account and an API key for the LLM endpoint used in the training, and which model names to use.
-:::
+### Registration at Helmholtz Blablador
 
-Keep the API key safe and treat it like a password (because that's exactly what it is). A password manager is a good place for it.
+Helmholtz-Jülich provides a LLM service with such an OpenAI-compatible API called "[Blablador](https://helmholtz-blablador.fz-juelich.de/)". Blablador can be used free of charge by members of German research institutions with a Helmholtz ID - generally, the respective university login works. In order to use the API service, prior registration and the generation of an Access Token / API key are necessary.
 
-### Optional: Zenodo Sandbox token
+Please follow the steps on [this website](https://sdlaml.pages.jsc.fz-juelich.de/ai/guides/blablador_api_access/) as described:
+
+1. **Register at Helmholtz Gitlab (Codebase)**
+* Open the [Helmholtz Codebase](https://codebase.helmholtz.cloud/users/sign_in)
+ * Log in via "Helmholtz ID" and select your university to authenticate with your university account
+2. **Create an API Key (Access Token)**
+* _ATTENTION: this API key should be treated like a personal password and should not be made available to anyone else! A password manager is a good place for it._
+* Open your [profile page](https://codebase.helmholtz.cloud/-/profile/preferences)
+* Select "Access Token" on the left side
+* Under "Personal access tokens", create a new token via "Add new token"
+* Name it best "Blablador API key"
+* Select "api" as scope
+* Copy the displayed key and save it securely (e.g. password manager) - it will not be displayed again after confirmation
+
+![img.png](helmholtz_api.png)
+
+* With a valid Blablador API key, those are the working values for the variables in the file `secrets` mentioned above:
+  * `ENDPOINT_URL`: https://api.blablador.fz-juelich.de/v1/
+  * `OPENAI_API_KEY`: _your-blablador-access-token_
+  * `LLM_MODEL`: alias-fast
+  * `LLM_MODEL_CODER`: alias-code
+
+## Optional: Zenodo Sandbox token
 
 Only needed if you want to run the deposit in notebook 7 yourself. Otherwise you follow the trainer's live demo.
 
@@ -30,14 +53,14 @@ The practical work is done locally on your laptop.
 ### What you need
 
 * Your laptop with internet access
-* Administrator rights to install software
+* Administration rights to install software
 * A terminal:
   * **Windows**: Command Prompt or PowerShell
   * **macOS** / **Linux**: Terminal
 
 ### Install uv
 
-[`uv`](https://docs.astral.sh/uv/) is a fast tool for Python project and package management. Install it as described in the [uv documentation](https://docs.astral.sh/uv/getting-started/installation/). Then close and reopen your terminal, and verify:
+[`uv`](https://docs.astral.sh/uv/) is a fast tool for Python project and package management. Install it as described in the [uv documentation](https://docs.astral.sh/uv/getting-started/installation/). Then close and reopen your command prompt / terminal, and verify (should print the installed version):
 
 ```bash
 uv --version
@@ -47,27 +70,26 @@ If Python is already installed on your system, `uv` uses it. Otherwise, `uv` [do
 
 ### Download and unpack the training materials
 
-* Download [`training_download.zip`](training_download.zip) and unpack it. You get a folder `jupyterlab-ai-training/` with:
-  * `pyproject.toml` - the list of Python packages for the training
-  * `secrets` - a template for your personal settings
-  * `notebooks/`, `data/`, `checkpoints/`, `examples/`
+* Download [`jupyter-ai-rdm-training.zip`](jupyter-ai-rdm-training.zip) and unpack it. You get a folder `jupyter-ai-rdm-training/` with:
+  * file `pyproject.toml` - the list of Python packages needed for the training
+  * file `secrets` - a template for your personal local settings
+  * folders `notebooks/`, `data/`, `checkpoints/`, `examples/`
 
-:::{warning} Do not use cloud-synced or network folders
+> **Do not use cloud-synced or network folders**  
 Do **not** place the folder inside OneDrive, Dropbox, Google Drive, iCloud or on a network drive. On many managed laptops these locations restrict running programs and keep syncing files. This can block or corrupt the Python environment, so that `uv sync` or `uv run` fails or hangs.
 
-Use a plain **local** folder instead, e.g. `C:\Users\<you>\jupyterlab-ai-training` (Windows) or `~/jupyterlab-ai-training` (macOS/Linux).
-:::
+Use a plain **local** folder instead, e.g. `C:\Users\<you>\jupyter-ai-rdm-training` (Windows) or `~/jupyter-ai-rdm-training` (macOS/Linux).
 
-### Create the virtual environment
+### Create the Python virtual environment
 
 Open the terminal, go into the unpacked folder, and install all packages:
 
 ```bash
-cd /path/to/jupyterlab-ai-training
+cd /path/to/jupyter-ai-rdm-training
 uv sync
 ```
 
-This creates a local virtual environment in the hidden folder `.venv` and a file `uv.lock` with the exact package versions.
+This creates a local virtual environment in a hidden folder `.venv` and a file `uv.lock` with the exact package versions.
 
 ### Fill in your `secrets` file
 
@@ -82,10 +104,10 @@ Leave `SYSTEM_PROMPT_DATA_STEWARD` as provided.
 
 ### Start JupyterLab with your secrets
 
-From the `jupyterlab-ai-training/` folder, start JupyterLab so that it loads `secrets` as environment variables:
+From the `jupyter-ai-rdm-training/` folder, start JupyterLab so that it loads `secrets` as environment variables:
 
 ```bash
-uv run --env-file secrets jupyter lab
+uv run --env-file=secrets jupyter lab
 ```
 
 * Your browser opens JupyterLab. If it doesn't, copy the URL shown in the terminal (starting with `http://localhost:8888/lab?token=...`) into your browser.
@@ -101,6 +123,6 @@ In JupyterLab, open `notebooks/0_setup-check.ipynb` and run `Kernel > Restart Ke
 
 No extensive programming knowledge is required, but the training uses Python and the terminal. If you are new to them, these interactive resources help:
 
-* <https://www.w3schools.com/python/default.asp>
+* <https://www.w3schools.com/python/>
 * <https://futurecoder.io/course/>
 * <https://www.terminaltutor.com/>

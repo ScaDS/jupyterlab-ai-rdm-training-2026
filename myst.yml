@@ -1,21 +1,24 @@
 version: 1
 
 project:
-  title: "JupyterLab, AI Assistant, and Python for Data Stewards"
-  description: "One-day hands-on training: JupyterLab and an AI assistant as data steward workbench"
+  title: "JupyterLab, AI Assistant, and Python for Research Data Management"
+  description: "One-day hands-on training: JupyterLab and an AI assistant as research data management workbench"
   authors:
     - name: Matthias Täschner
       email: matthias.taeschner@uni-leipzig.de
       affiliations:
         - scadsai
+        - come2data
   affiliations:
     - id: scadsai
       name: DSC ScaDS.AI, Leipzig University
       department: Data Science Center ScaDS.AI
       url: https://scads.ai
       ror: https://ror.org/01t4ttr56
-  # TODO: set to the final repository URL
-  github: https://github.com/ScaDS/jupyterlab-ai-data-stewards
+    - id: come2data
+      name: Come2Data
+      url: https://come2data.de
+  github: https://github.com/ScaDS/jupyterlab-ai-rdm-training-2026
   license:
     code: MIT
     content: CC-BY-4.0
@@ -29,25 +32,25 @@ project:
       title: "Preparation"
       children:
         - file: notebooks/0_setup-check.ipynb
-          title: "0 · Setup Check"
+          title: "0 - Setup Check"
     - title: "Morning: Get to know your tools"
       children:
         - file: notebooks/1_jupyterlab-basics.ipynb
-          title: "1 · JupyterLab Basics"
+          title: "1 - JupyterLab Basics"
         - file: notebooks/2_ai-assistant.ipynb
-          title: "2 · AI Assistant"
+          title: "2 - AI Assistant"
         - file: notebooks/3_explore-and-plan.ipynb
-          title: "3 · Explore and Plan"
+          title: "3 - Explore and Plan"
     - title: "Afternoon: Use your tools productively"
       children:
         - file: notebooks/4_data-validation.ipynb
-          title: "4 · Data Validation"
+          title: "4 - Data Validation"
         - file: notebooks/5_quality-report.ipynb
-          title: "5 · Quality Report"
+          title: "5 - Quality Report"
         - file: notebooks/6_metadata-packaging.ipynb
-          title: "6 · Metadata Packaging"
+          title: "6 - Metadata Packaging"
         - file: notebooks/7_dmp-and-deposit.ipynb
-          title: "7 · DMP and Deposit"
+          title: "7 - DMP and Deposit"
     - title: "Examples"
       children:
         - file: examples/my-plan.md
@@ -67,4 +70,4 @@ site:
   nav:
     - title: GitHub
       # TODO: set to the final repository URL
-      url: https://github.com/ScaDS/jupyterlab-ai-data-stewards
+      url: https://github.com/ScaDS/jupyterlab-ai-rdm-training-2026

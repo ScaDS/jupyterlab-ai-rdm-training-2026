@@ -17,20 +17,18 @@ The rendered materials are published via GitHub Pages (see the repository's *Abo
 | `checkpoints/` | Reference outputs of notebooks 4–6 for catching up |
 | `examples/` | Reference results of assistant tasks (plan, exploration notebook, DMP draft) |
 | `slides/` | Slide deck (`.pptx` source and `.pdf`) |
-| `scripts/build_download.py` | Builds the participant download `preparation/training_download.zip` |
 | `trainer/` | Trainer notes: timing, cut list, fallbacks (not published) |
 
 ## Development
 
 ```bash
 uv sync                                     # environment incl. jupyter-book
-python scripts/build_download.py            # participant zip
 uv run jupyter book start                   # local preview of the site
 ```
 
-For the notebooks, create a `secrets` file from `preparation/secrets.sample` and start JupyterLab with `uv run --env-file secrets jupyter lab`.
+For the notebooks, create a `secrets` file from `preparation/secrets.sample` and start JupyterLab with `uv run --env-file=secrets jupyter lab`.
 
-On every push to `main`, the GitHub Actions workflow builds the participant zip and the site and deploys both to GitHub Pages. In the repository settings, set *Pages → Source* to *GitHub Actions*.
+On every push to `main`, the GitHub Actions workflow builds the site and deploys it to GitHub Pages. In the repository settings, set *Pages → Source* to *GitHub Actions*.
 
 ## License
 
