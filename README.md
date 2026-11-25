@@ -4,7 +4,7 @@ Materials for a one-day hands-on training (10:00–16:00) by [ScaDS.AI](https://
 
 > EXPLORE → VALIDATE → REPORT & CLEAN → PACKAGE → DMP & DEPOSIT
 
-The rendered materials are published via GitHub Pages (see the repository's *About* section).
+The rendered materials are published via GitHub Pages at: https://scads.github.io/jupyterlab-ai-rdm-training-2026/
 
 ## Repository layout
 

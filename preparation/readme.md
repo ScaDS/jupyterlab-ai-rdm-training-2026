@@ -70,7 +70,7 @@ If Python is already installed on your system, `uv` uses it. Otherwise, `uv` [do
 
 ### Download and unpack the training materials
 
-* Download [`jupyter-ai-rdm-training.zip`](jupyter-ai-rdm-training.zip) and unpack it. You get a folder `jupyter-ai-rdm-training/` with:
+* Download [`jupyter-ai-rdm-training.zip`](/jupyter-ai-rdm-training.zip) and unpack it. You get a folder `jupyter-ai-rdm-training/` with:
   * file `pyproject.toml` - the list of Python packages needed for the training
   * file `secrets` - a template for your personal local settings
   * folders `notebooks/`, `data/`, `checkpoints/`, `examples/`

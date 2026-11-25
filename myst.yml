@@ -25,6 +25,8 @@ project:
   exclude:
     - trainer/**
     - README.md
+  static_files:
+    - preparation/jupyter-ai-rdm-training.zip
   toc:
     - file: intro.md
       title: "Introduction"
@@ -69,5 +71,4 @@ site:
     logo: logo-scadsai.png
   nav:
     - title: GitHub
-      # TODO: set to the final repository URL
       url: https://github.com/ScaDS/jupyterlab-ai-rdm-training-2026
