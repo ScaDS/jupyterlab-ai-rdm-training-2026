@@ -51,7 +51,7 @@ Every notebook from 5 onwards starts with a **catch-up** cell. It copies the ref
 
 ## After the training
 
-Everything you need to repeat the exercises at home is in the [download](). You can use any OpenAI-compatible LLM endpoint you have access to.
+Everything you need to repeat the exercises at home is provided in the [download section](preparation/readme.md#download-and-unpack-the-training-materials). You can use any OpenAI-compatible LLM endpoint you have access to.
 
 ## License
 
